@@ -18,8 +18,8 @@
                 <span>genres</span>
             </div>
 
-            <p class="text-gray-300 mt-8">
-                
+            <p class="text-gray-700 mt-8">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores aliquam quae saepe nisi reiciendis eos quam, modi quo harum nostrum voluptas officiis tenetur ducimus mollitia quos obcaecati nihil dicta magni.
             </p>
         </div>
     </div>
@@ -27,11 +27,11 @@
 
 <div class="container mx-auto px-4 py-16">
     <h2 class="text-3xl text-gray-400 mb-4">Other Movies</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+    <div class="regular slider mx-auto">
         @foreach ($otherMovies as $otherMovie)
         <a href="{{ route('movie.show', ['id' => $otherMovie['id']]) }}"
             class="rounded overflow-hidden shadow-lg bg-gray-800">
-            <img class="w-full object-cover" src="{{ $otherMovie['image'] }}" alt="{{ $otherMovie['title'] }}">
+            <img class="w-full" src="{{ $otherMovie['image'] }}" alt="{{ $otherMovie['title'] }}">
             <div class="px-6 py-4">
                 <div class="text-white font-bold text-xl mb-2">{{ $otherMovie['title'] }}</div>
                 <div class="flex flex-wrap items-center text-gray-400 text-sm">
@@ -48,12 +48,6 @@
                     <span class="mx-2">|</span>
                     <span>drama</span>
                 </div>
-            </div>
-            <div class="px-6 pt-4 pb-2">
-                @foreach ($otherMovie['tags'] as $tag)
-                <span
-                    class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{{ $tag }}</span>
-                @endforeach
             </div>
         </a>
         @endforeach
