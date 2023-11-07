@@ -31,8 +31,64 @@ class CardController extends Controller
         ],
         [
             'id' => '4',
-            'image' => '/images/sonic.jpg',
-            'title' => 'Forest',
+            'image' => '/images/avengers.jpeg',
+            'title' => 'Avengers',
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, Nonea! Maiores et perferendis eaque, exercitationem praesentium nihil.',
+            'tags' => ['#photography', '#travel', '#fall'],
+        ],
+        [
+            'id' => '5',
+            'image' => '/images/beckham.jpg',
+            'title' => 'Save Our Squad',
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, Nonea! Maiores et perferendis eaque, exercitationem praesentium nihil.',
+            'tags' => ['#photography', '#travel', '#fall'],
+        ],
+        [
+            'id' => '6',
+            'image' => '/images/blackmirror.jpg',
+            'title' => 'Black Mirror',
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, Nonea! Maiores et perferendis eaque, exercitationem praesentium nihil.',
+            'tags' => ['#photography', '#travel', '#fall'],
+        ],
+        [
+            'id' => '7',
+            'image' => '/images/blackpanther.jpg',
+            'title' => 'Black Panther',
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, Nonea! Maiores et perferendis eaque, exercitationem praesentium nihil.',
+            'tags' => ['#photography', '#travel', '#fall'],
+        ],
+        [
+            'id' => '8',
+            'image' => '/images/homealone.jpg',
+            'title' => 'Home Alone',
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, Nonea! Maiores et perferendis eaque, exercitationem praesentium nihil.',
+            'tags' => ['#photography', '#travel', '#fall'],
+        ],
+        [
+            'id' => '9',
+            'image' => '/images/joker.avif',
+            'title' => 'Joker',
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, Nonea! Maiores et perferendis eaque, exercitationem praesentium nihil.',
+            'tags' => ['#photography', '#travel', '#fall'],
+        ],
+        [
+            'id' => '10',
+            'image' => '/images/jumanji.jpg',
+            'title' => 'Jumanji',
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, Nonea! Maiores et perferendis eaque, exercitationem praesentium nihil.',
+            'tags' => ['#photography', '#travel', '#fall'],
+        ],
+        [
+            'id' => '11',
+            'image' => '/images/smile.png',
+            'title' => 'Smile',
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, Nonea! Maiores et perferendis eaque, exercitationem praesentium nihil.',
+            'tags' => ['#photography', '#travel', '#fall'],
+        ],
+        [
+            'id' => '12',
+            'image' => '/images/squidgame.webp',
+            'title' => 'Squid Game',
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, Nonea! Maiores et perferendis eaque, exercitationem praesentium nihil.',
             'tags' => ['#photography', '#travel', '#fall'],
         ],
@@ -45,9 +101,10 @@ class CardController extends Controller
 
     public function show($id)
     {
-        // Find the movie in the array based on its ID
-        $movie = collect($this->cards)->firstWhere('id', $id); 
+        $selectedMovie = collect($this->cards)->firstWhere('id', $id); 
+
+        $otherMovies = collect($this->cards)->whereNotIn('id', [$id]);
         
-        return view('movie', ['movie' => $movie]);
+        return view('movie', ['movie' => $selectedMovie, 'otherMovies' => $otherMovies]);
     }
 }

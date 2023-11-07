@@ -24,7 +24,13 @@
             </ul>
         </div>
     </nav>
+    
     @yield('content')
+
+    <footer class="flex mt-10 bg-white items-center justify-center md:p-6 dark:bg-gray-800">
+        <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 All Rights Reserved.
+        </span>
+    </footer>
 </body>
 
 </html>
