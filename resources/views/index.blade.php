@@ -4,12 +4,12 @@
 
 <section class="p-16">
     <div class="text-gray-800 text-[30px]">
-        New films
+        New movies
     </div>
     <div class="pt-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-6 gap-5">
         @foreach ($cards as $card)
         <a href="{{ route('movie.show', ['id' => $card['id']]) }}"
-            class="rounded overflow-hidden shadow-lg bg-gray-800">
+            class="rounded overflow-hidden shadow-lg bg-gray-800 hover:opacity-75 transition duration-200">
             <img class="w-full object-cover" src="{{ $card['image'] }}" alt="{{ $card['title'] }}">
             <div class="px-6 py-4">
                 <div class="text-white font-bold text-xl mb-2">{{ $card['title'] }}</div>
