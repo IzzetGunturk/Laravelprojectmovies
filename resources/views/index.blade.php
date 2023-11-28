@@ -7,12 +7,13 @@
         New movies
     </div>
     <div class="pt-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-6 gap-5">
-        @foreach ($cards as $card)
-        <a href="{{ route('movie.show', ['id' => $card['id']]) }}"
+        {{-- resources/views/index.blade.php --}}
+        @foreach($cards as $card)
+        <a href="{{ route('movie.show', ['id' => $card->id]) }}"
             class="rounded overflow-hidden shadow-lg bg-gray-800 hover:opacity-75 transition duration-200">
-            <img class="w-full object-cover" src="{{ $card['image'] }}" alt="{{ $card['title'] }}">
+            <img class="w-full object-cover" src="{{ $card->image }}" alt="{{ $card->title }}">
             <div class="px-6 py-4">
-                <div class="text-white font-bold text-xl mb-2">{{ $card['title'] }}</div>
+                <div class="text-white font-bold text-xl mb-2">{{ $card->title }}</div>
                 <div class="flex flex-wrap items-center text-gray-400 text-sm">
                     <svg class="fill-current text-orange-500 w-4" viewBox="0 0 24 24">
                         <g data-name="Layer 2">
@@ -29,7 +30,7 @@
                 </div>
             </div>
             <div class="px-6 pt-4 pb-2">
-                @foreach ($card['tags'] as $tag)
+                @foreach (explode(',', $card->tags) as $tag)
                 <span
                     class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{{ $tag }}</span>
                 @endforeach
