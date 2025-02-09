@@ -6,4 +6,5 @@ I programmed with Laravel a movie page.
 
 - Laravel
 - Tailwind CSS
+- JavaScript
 - HeidiSQL
