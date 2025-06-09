@@ -1,9 +1,10 @@
 # 🎥 Laravel project movies 
 
-I programmed with laravel a movie page.
+I programmed with Laravel a movie page.
 
 ## 🛠️ Technologies
 
 - Laravel
 - Tailwind CSS
+- JavaScript
 - HeidiSQL
