@@ -73,7 +73,6 @@ class CardControllerTest extends TestCase
             (object)['id' => 4,'title' => 'Squid Game'],
         ]);
 
-
         $mock = \Mockery::mock(CardRepository::class);
 
         $mock->shouldReceive('getMovieById')->with(1)->andReturn($selectedMovie);
@@ -84,7 +83,7 @@ class CardControllerTest extends TestCase
         // when
         $response = $this->get(route('movie.show', 1));
 
-        // given
+        // then
         $response->assertSee('Jumanji');
         $response->assertSee('Black Mirror');
         $response->assertSee('Joker');
