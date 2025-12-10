@@ -7,6 +7,6 @@ use App\Http\Controllers\CardController;
 
 // Route::view('/', 'index');
 // Route::view('/movie', 'movie');
-Route::get('/', [CardController::class, 'index'])->name('home');;
+Route::get('/', [CardController::class, 'index'])->name('cards.index');;
 Route::get('/movie/{id}', [CardController::class, 'show'])->name('movie.show');
 
