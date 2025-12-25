@@ -13,7 +13,7 @@ class CardRepository
 
     public function getMovieById($id)
     {
-        return Card::getMovieById($id);
+        return Card::find($id);
     }
 
     public function getOtherMovies($id)
